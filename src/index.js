@@ -2,11 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Amplify from 'aws-amplify';
 import reportWebVitals from './reportWebVitals';
+import { client } from './graphql/client';
+import { ApolloProvider } from 'react-apollo';
+import { awsConfig } from './aws.config';
+import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
+
+Amplify.configure(awsConfig);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <ApolloHooksProvider client={client}>
+        <App />
+      </ApolloHooksProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
