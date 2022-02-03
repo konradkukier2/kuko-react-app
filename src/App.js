@@ -54,7 +54,7 @@ function App() {
           <button style={buttonStyle} onClick={() => getJob(jobId)}>GET JOB BY ID (GraphQL)</button>
         </div>
 
-        <div>
+        <div style={{ marginLeft: 22 }}>
           <input value={code} style={inputStyle} onChange={(e) => setCode(e.target.value)}></input>
           <button style={buttonStyle} onClick={() => verifyCode(code)}>VERIFY CODE (AWS Lambda)</button>
         </div>
@@ -62,6 +62,7 @@ function App() {
         {
           cloudResponse && (
           <div>
+            <p>Server response:</p>
             <pre style={responseStyle}>{cloudResponse}</pre>
           </div>
           )
