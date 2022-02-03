@@ -1,8 +1,5 @@
-// import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-// import { useQuery } from '@apollo/react-hooks';
-// import gql from 'graphql-tag';
 import API from '@aws-amplify/api';
 
 import { getJob as getJobQuery } from './graphql/custom';
